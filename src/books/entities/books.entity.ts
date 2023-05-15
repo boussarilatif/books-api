@@ -1,0 +1,13 @@
+export enum Language {
+  ENGLISH = 'English',
+  FRENCH = 'French',
+}
+
+export interface Book {
+  id: number;
+  title: string;
+  author: string;
+  publicationDate: string;
+  numberOfPages: number;
+  language: Language;
+}
