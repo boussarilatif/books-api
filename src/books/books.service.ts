@@ -12,7 +12,6 @@ export class BooksService {
   }
 
   createBook(data: CreateBookDto): Book {
-    console.log(data,'data')
     const book = {
       id: generateId(),
       ...data,
