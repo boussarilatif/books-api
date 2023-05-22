@@ -12,7 +12,7 @@ export class BooksController {
   }
 
   @Post()
-  create(@Body() body: CreateBookDto) {
-    return 'Create Book';
+  create(@Body() data: CreateBookDto) {
+    return this.bookService.createBook(data);
   }
 }
