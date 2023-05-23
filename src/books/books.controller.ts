@@ -18,6 +18,8 @@ export class BooksController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return `Get book with id ${id}`;
+    return this.bookService.findBookById(+id)
   }
+
+
 }
