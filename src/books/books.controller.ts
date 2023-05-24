@@ -1,6 +1,7 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
 import { BooksService } from './books.service';
 import { CreateBookDto } from 'src/dto/create-book.dto';
+import { UpdateBookDto } from 'src/dto/update-book.dto';
 
 @Controller('books')
 export class BooksController {
@@ -21,5 +22,10 @@ export class BooksController {
     return this.bookService.findBookById(+id)
   }
 
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() body: UpdateBookDto) {
+    return `update book with id ${id}`
+  }
 
 }
+
