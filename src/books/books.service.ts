@@ -30,10 +30,19 @@ export class BooksService {
     return book;
   }
 
-
   updateBook(bookId: number, updatedBook: UpdateBookDto){
     const book = this.findBookById(bookId)
     Object.assign(book, updatedBook);
     return book;
+  }
+
+  deleteBook(bookId: number) {
+    const index = this.books.findIndex(book => book.id === bookId);
+    console.log(index)
+    if (index !== -1) {
+      this.books.splice(index, 1);
+      return { message: `Book with id ${bookId} deleted successfully` };
+    }
+    throw new NotFoundException(`Book with id ${bookId} not found`);
   }
 }

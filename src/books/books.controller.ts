@@ -30,7 +30,7 @@ export class BooksController {
 
   @Delete(':id')
   delete(@Param('id') id: string) {
-    return `delete book with id ${id}`
+    return this.bookService.deleteBook(+id)
   }
 
 }
