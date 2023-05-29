@@ -10,7 +10,36 @@ export class BooksService {
   private books: Book[] = []
 
   findBooks(filterDto: GetBookFilterDto){
-    return this.books
+    const { search, author, publicationDate, language } = filterDto;
+
+    let filteredBooks = this.books;
+
+    if (search) {
+      filteredBooks = filteredBooks.filter((book) =>
+        book.title.toLowerCase().includes(search.toLowerCase()) ||
+        book.author.toLowerCase().includes(search.toLowerCase())
+      );
+    }
+
+    if (author) {
+      filteredBooks = filteredBooks.filter((book) =>
+        book.author.toLowerCase() === author.toLowerCase()
+      );
+    }
+
+    if (publicationDate) {
+      filteredBooks = filteredBooks.filter(
+        (book) => book.publicationDate === publicationDate
+      );
+    }
+
+    if (language) {
+      filteredBooks = filteredBooks.filter(
+        (book) => book.language === language
+      );
+    }
+
+    return filteredBooks;
   }
 
   createBook(data: CreateBookDto) {
