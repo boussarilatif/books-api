@@ -3,12 +3,13 @@ import { Book } from './entities/books.entity';
 import { CreateBookDto } from 'src/dto/create-book.dto';
 import generateId from 'src/helper/generateId';
 import { UpdateBookDto } from 'src/dto/update-book.dto';
+import { GetBookFilterDto } from 'src/dto/get-book-filter.dto';
 
 @Injectable()
 export class BooksService {
   private books: Book[] = []
 
-  findBooks(){
+  findBooks(filterDto: GetBookFilterDto){
     return this.books
   }
 
