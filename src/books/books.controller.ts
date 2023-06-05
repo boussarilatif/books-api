@@ -20,7 +20,6 @@ export class BooksController {
 
   @Get(':id')
   findOne(@Param('id',ParseIntPipe) id: number) {
-    console.log(typeof id)
     return this.bookService.findBookById(+id)
   }
 
