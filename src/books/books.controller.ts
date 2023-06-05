@@ -20,7 +20,7 @@ export class BooksController {
 
   @Get(':id')
   findOne(@Param('id',ParseIntPipe) id: number) {
-    return this.bookService.findBookById(+id)
+    return this.bookService.findBookById(id)
   }
 
   @Patch(':id')
