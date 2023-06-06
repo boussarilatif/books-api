@@ -14,7 +14,7 @@ export class BooksController {
   }
 
   @Post()
-  create(@Body(new ValidationPipe()) body: CreateBookDto) {
+  create(@Body() body: CreateBookDto) {
     return this.bookService.createBook(body);
   }
 
