@@ -11,14 +11,11 @@ export class CreateBookDto {
   author: string;
 
   @IsDateString()
-  @IsNotEmpty()
   publicationDate: string;
 
   @IsNumber()
-  @IsNotEmpty()
   numberOfPages: number;
 
   @IsEnum(Language)
-  @IsNotEmpty()
   language: Language;
 }

@@ -16,6 +16,7 @@ import { Book } from './books/entities/books.entity';
       database: 'book_database',
       entities: [Book],
       synchronize: true,
+      logging: true
     }),
     BooksModule
   ],
