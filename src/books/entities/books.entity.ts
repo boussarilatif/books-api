@@ -3,7 +3,7 @@ export enum Language {
   FRENCH = 'French',
 }
 
-export interface Book {
+export class Book {
   id: number;
   title: string;
   author: string;
