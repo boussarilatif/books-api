@@ -36,6 +36,10 @@
     "pg": "^8.11.3",
     "@nestjs/typeorm": "^9.0.1",
     "@nestjs/jwt": "^10.1.1"
+    "pino": "^8.16.2",
+    "nestjs-pino": "^3.5.0",
+    "pino-http": "^8.5.1",
+    "pino-pretty": "^10.2.3"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
